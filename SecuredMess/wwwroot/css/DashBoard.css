@@ -2,22 +2,24 @@
 
 body {
     margin: 0 auto;
-    background: #6a11cb;
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/images/stacked-waves-haikei.svg);
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
 }
 
 
 #mainContainer {
     display: flex;
     height: 80vh;
-    width: 60vw;
+    width: 1200px;
     background: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
-    margin-left: 20vw;
-    margin-top: 10vh;
+    margin: 20px;
 }
 
 .menuContainer {
@@ -33,7 +35,7 @@ body {
     align-items: center;
     background-color: #3C49DD;
     border-top-left-radius: 9px;
-    height: 10vh;
+    height: 80px;
 }
 
 .profilePictureContainer {
@@ -68,43 +70,48 @@ body {
 .addUserContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 4vh;
-    padding: 3px 0 3px 0;
+    padding: 10px 7px 15px 20px;
     border-bottom: 1px solid #9a9a9a;
 }
 
+
 .contactsContainer {
-    height: 70%;
+    height: 80%;
     width: inherit;
+    overflow-y: scroll;
 }
 
-#logOutIcon {
-    height: 25px;
-    width: 25px;
-    padding: 10px;
-}
-
-    #logOutIcon:hover {
-        height: 27px;
-        width: 27px;
+    .contactsContainer::-webkit-scrollbar {
+        display: none;
     }
 
-#addUserIcon {
-    height: 25px;
-    width: 25px;
+#addUserInput {
+    height: 60%;
+    width: 70%;
+    padding: 3px;
+    border-radius: 5px;
+    border-style: none;
+    font-family: DM Sans, serif;
+    color: #1F2025;
 }
 
-    #addUserIcon:hover {
-        height: 27px;
-        width: 27px;
+    #addUserInput:focus {
+        outline-style: double;
+        outline-color: #3C49DD;
     }
+
+#addUserButton {
+    height: 27px;
+    width: 27px;
+}
 
 .contact {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 10vh;
+    height: 8vh;
     width: inherit;
     border-bottom: 1px solid #9a9a9a;
 }
@@ -112,7 +119,7 @@ body {
 .activeContact {
     background-color: #3C49DD;
     width: 5px;
-    height: 10vh;
+    height: 8vh;
 }
 
 .contactImageContainer {
@@ -153,11 +160,46 @@ body {
     margin: 16px;
 }
 
+.deleteContactIcon {
+    height: 20px;
+    width: 20px;
+}
+
+.logOutContainer {
+    display: flex;
+    align-items: center;
+    place-content: end;
+    height: 10%;
+    width: inherit;
+    margin-top: auto;
+}
+
+#logOutIcon {
+    height: 25px;
+    width: 25px;
+    padding: 10px;
+}
+
+    #logOutIcon:hover {
+        height: 27px;
+        width: 27px;
+    }
+
+/*CHAT*/
 .chatContainer {
     display: flex;
     flex-direction: column;
-    padding: 15px;
 }
+
+#messagesContainer {
+    overflow-y: scroll;
+    height: available;
+    padding: 10px;
+}
+
+    #messagesContainer::-webkit-scrollbar {
+        display: none;
+    }
 
 .contactImageMessage {
     display: flex;
@@ -169,7 +211,35 @@ body {
     width: 30px;
 }
 
-.contactImageMessage {
+.messageInputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: inherit;
+    margin-top: auto;
+    padding: 15px;
+}
+
+#messageInput {
+    width: 90%;
+    height: 25px;
+    padding: 3px;
+    border-radius: 5px;
+    border-style: none;
+    font-family: DM Sans, serif;
+    color: #1F2025;
+    background: #e0e1ee;
+}
+
+    #messageInput:focus {
+        outline-style: double;
+        outline-color: #3C49DD;
+    }
+
+#sendMessageButton {
+    height: 25px;
+    width: 20px;
+    padding: 8px;
 }
 
 .receivedMessage {
@@ -205,13 +275,4 @@ body {
     padding: 15px;
     margin: 10px;
     width: 50%;
-}
-
-
-.logOutContainer {
-    display: flex;
-    align-items: center;
-    place-content: end;
-    height: 10vh;
-    width: inherit;
 }

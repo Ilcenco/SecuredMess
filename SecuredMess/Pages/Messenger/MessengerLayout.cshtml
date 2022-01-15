@@ -5,58 +5,94 @@
 }
 
 <div id="mainContainer">
-    <div class="menuContainer">
+        <div class="menuContainer">
 
-        <div class="profileContainer">
-            <div class="profilePictureContainer">
-                <img class="profilePicture" src="/images/arctic-fox.png" alt="Profile Picture">
+            <div class="profileContainer">
+                <div class="profilePictureContainer">
+                    <img class="profilePicture" src="/images/arctic-fox.png" alt="Profile Picture">
+                </div>
+
+                <div class="userInfo">
+                    <p class="userNameText">User Name</p>
+                    <p class="userId userNameText">#ifg57gh</p>
+                </div>
             </div>
 
-            <div class="userInfo">
-                <p class="userNameText">User Name</p>
-                <p class="userId userNameText">#ifg57gh</p>
+            <div id="addUserContainer" class="addUserContainer">
+                <input id="addUserInput" type=text alt="add user">
+                <input id="addUserButton" type="image" src="/images/add.png">
+
             </div>
-        </div>
 
-        <div class="addUserContainer">
-            <input id="addUserIcon" type="image" name="Add User Button" src="/images/add-user.png" alt="add user">
-        </div>
+            <div class="contactsContainer">
 
-        <div class="contactsContainer">
-            <div class="contact">
-                <div class="activePlusInfo">
-                    <div class="activeContact"> </div>
-                    <div class="contactsInfo">
-                        <div class="contactImageContainer">
-                            <img class="contactImage" src="/images/fox (2).png" alt="">
-                        </div>
+                <div class="contact">
+                    <div class="activePlusInfo">
+                        <div class="activeContact"> </div>
                         <div class="contactsInfo">
-                            <p class="contactName">User Name</p>
+                            <div class="contactImageContainer">
+                                <img class="contactImage" src="/images/fox%20(2).png" alt="">
+                            </div>
+                            <div class="contactsInfo">
+                                <p class="contactName">User Name</p>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="deleteContactContainer">
+                        <input class="deleteContactIcon" type="image" name="Delete Contact Button"
+                               src="/images/trash.png" alt="delete contact">
                     </div>
                 </div>
 
-                <div class="deleteContactContainer">
-                    <input id="deleteContactIcon" type="image" name="Delete Contact Button" src="/images/trash.png" alt="delete contact">
+                <div class="contact">
+                    <div class="activePlusInfo">
+                        <div class="activeContact"> </div>
+                        <div class="contactsInfo">
+                            <div class="contactImageContainer">
+                                <img class="contactImage" src="/images/fox%20(2).png" alt="">
+                            </div>
+                            <div class="contactsInfo">
+                                <p class="contactName">User Name</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="deleteContactContainer">
+                        <input class="deleteContactIcon" type="image" name="Delete Contact Button"
+                               src="/images/trash.png" alt="delete contact">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="logOutContainer">
+                <a href="../../SignIn/Html/signIn.html">
+                    <input id="logOutIcon" type="image" name="Log Out Button" src="/images/log-out.png" alt="Log Out"
+                           onclick="logOut()">
+                </a>
+            </div>
+        </div>
+
+        <div class="chatContainer">
+            <div id="messagesContainer">
+                <div class="receivedMessage">
+                    <div class="textMessageContainer">
+                        <p class="textMessageReceived">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Necessitatibus ratione vero iure in id perspiciatis numquam est. Fugit quas laboriosam
+                            similique reiciendis, atque, quam officiis et, id odio cum perspiciatis.</p>
+                    </div>
+                </div>
+                <div class="sentMessage">
+                    <p class="textMessageSend">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quod
+                        repellat quae deserunt non consequuntur reiciendis enim nam doloremque corrupti? Sapiente vero
+                        beatae tenetur laboriosam quibusdam magnam doloribus voluptatem architecto.</p>
                 </div>
             </div>
-        </div>
-        <div class="logOutContainer">
-            <input id="logOutIcon" type="image" name="Log Out Button" src="/images/log-out.png" alt="Log Out"
-                   onclick="logOut()">
-        </div>
-    </div>
-
-    <div class="chatContainer">
-        <div class="receivedMessage">
-            <div class="textMessageContainer">
-                <p class="textMessageReceived">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus ratione vero iure in id perspiciatis numquam est. Fugit quas laboriosam similique reiciendis, atque, quam officiis et, id odio cum perspiciatis.</p>
+            <div class="messageInputContainer">
+                <input type="text" id="messageInput">
+                <input id="sendMessageButton" type="image" src="/images/polygon.png">
             </div>
         </div>
-        <div class="sentMessage">
-            <p class="textMessageSend">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quod repellat quae deserunt non consequuntur reiciendis enim nam doloremque corrupti? Sapiente vero beatae tenetur laboriosam quibusdam magnam doloribus voluptatem architecto.</p>
-        </div>
 
     </div>
-
-</div>
