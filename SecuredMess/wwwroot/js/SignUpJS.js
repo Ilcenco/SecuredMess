@@ -50,19 +50,4 @@ function SignUpRequest() {
             alert('POST failed.');
         }
     });
-
-    //$.ajax({
-    //    type: "POST",
-    //    url: "https://localhost:8000/auth/sign-up",
-    //    dataType: "jsonp",
-    //    data: formData,
-    //    success: function (data) {
-    //        console.log(data);
-
-    //    },
-    //    error: function (xhr, status, error) {
-    //        console.log(error);
-
-    //    }
-    //});
 }
