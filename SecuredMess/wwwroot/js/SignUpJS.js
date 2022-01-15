@@ -27,22 +27,27 @@
 
 function SignUpRequest() {
 
-    var formData = $("#signUpForm").serializeArray();
+    var formData = {
+        username: $("#typeUserName").val(),
+        password: $("#typePassword").val(),
+    }
     console.log(formData);
 
     $.ajax({
-        type: 'POST',
         url: 'http://localhost:8000/auth/sign-up',
-        crossDomain: true,
-        data: formData,
-        dataType: 'json',
+        method: 'POST',
+        data: JSON.stringify(formData),
         success: function (responseData, textStatus, jqXHR) {
-
-            console.log(responseData);
-
+            if (window.confirm('You have been successfuly registered! Thank You.')) {
+                location.href = "https://localhost:44324/SignIn/SignIn";
+            }
+            else {
+                location.href = "https://localhost:44324/SignUp/SignUp";
+            }
+            //alert("You have been successfuly registered! Thank You.")
         },
         error: function (responseData, textStatus, errorThrown) {
-            alert('POST failed.');
+            alert('This username is taken');
         }
     });
 }

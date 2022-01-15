@@ -23,19 +23,28 @@
 
 function SignInRequest() {
 
-    var formData = $("#logInForm").serializeArray();
+    var formData = {
+        username: $("#typeuserName").val(),
+        password: $("#typePassword").val(),
+    }
     console.log(formData);
 
     $.ajax({
-        url: "https://localhost:8000/auth/sign-in",
-        method: "POST",
-        data: formData,
-        success: function (data) {
-            console.log(data);
+        url: 'http://localhost:8000/auth/sign-in',
+        method: 'POST',
+        data: JSON.stringify(formData),
+        success: function (responseData, textStatus, jqXHR) {
+            location.href = "https://localhost:44324/Messenger/MessengerLayout";
         },
-        error: function (xhr, status, error) {
-            console.log(error);
-            console.log(this.url);
+        error: function (responseData, textStatus, errorThrown) {
+            $('#signInError').removeAttr('hidden');
         }
     });
 }
+
+$("#typeuserName").focus(function () {
+    $("#signInError").attr("hidden", true);
+});
+$("#typePassword").focus(function () {
+    $("#signInError").attr("hidden", true);
+});
