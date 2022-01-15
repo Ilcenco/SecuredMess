@@ -1,12 +1,7 @@
 ﻿$(document).ready(function () {
     $("#signUpForm").validate({
         rules: {
-            email: {
-                required: true,
-                minlength: 8,
-                maxlength: 30,
-            },
-            userName: {
+            username: {
                 required: true,
                 minlength: 7,
                 maxlength: 22,
