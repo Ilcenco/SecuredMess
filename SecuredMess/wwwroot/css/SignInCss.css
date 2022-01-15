@@ -19,3 +19,7 @@ html, body {
     height: 100%;
     overflow: hidden
 }
+#signInError{
+    text-align:center;
+    color:red;
+}
