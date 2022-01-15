@@ -4,4 +4,18 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\images\add-user.png" />
+    <None Include="wwwroot\images\add.png" />
+    <None Include="wwwroot\images\arctic-fox.png" />
+    <None Include="wwwroot\images\back.png" />
+    <None Include="wwwroot\images\fox %281%29.png" />
+    <None Include="wwwroot\images\fox %282%29.png" />
+    <None Include="wwwroot\images\log-out.png" />
+    <None Include="wwwroot\images\logo.png" />
+    <None Include="wwwroot\images\polygon.png" />
+    <None Include="wwwroot\images\stacked-waves-haikei.svg" />
+    <None Include="wwwroot\images\trash.png" />
+  </ItemGroup>
+
 </Project>
