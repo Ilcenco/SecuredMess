@@ -1,4 +1,7 @@
 ﻿$(document).ready(function () {
+    window.localStorage.removeItem('x-auth-token');
+
+
     $("#logInForm").validate({
         rules: {
             userName: {
@@ -34,6 +37,8 @@ function SignInRequest() {
         method: 'POST',
         data: JSON.stringify(formData),
         success: function (responseData, textStatus, jqXHR) {
+            window.localStorage.setItem('x-auth-token', responseData.token);
+            console.log(localStorage.getItem('x-auth-token'));
             location.href = "https://localhost:44324/Messenger/MessengerLayout";
         },
         error: function (responseData, textStatus, errorThrown) {
