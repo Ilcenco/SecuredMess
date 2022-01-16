@@ -7,7 +7,6 @@ body {
     align-items: center;
     justify-content: center;
     background-image: url(/images/stacked-waves-haikei.svg);
-    position: absolute;
     height: 100vh;
     width: 100vw;
     z-index: -1;
@@ -18,11 +17,10 @@ body {
 #mainContainer {
     display: flex;
     height: 80vh;
-    width: 1200px;
+    max-width: 1200px;
     background: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
     margin: 20px;
-    
 }
 
 .menuContainer {
@@ -192,12 +190,11 @@ body {
 .chatContainer {
     display: flex;
     flex-direction: column;
+    padding-top: 10px;
 }
 
 #messagesContainer {
     overflow-y: scroll;
-    height: available;
-    padding: 10px;
 }
 
     #messagesContainer::-webkit-scrollbar {
