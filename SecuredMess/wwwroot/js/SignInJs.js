@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     window.localStorage.removeItem('x-auth-token');
+    window.localStorage.removeItem('x-username');
 
 
     $("#logInForm").validate({
@@ -36,9 +37,9 @@ function SignInRequest() {
         url: 'http://localhost:8000/auth/sign-in',
         method: 'POST',
         data: JSON.stringify(formData),
-        success: function (responseData, textStatus, jqXHR) {
+        success: function (responseData) {
             window.localStorage.setItem('x-auth-token', responseData.token);
-            console.log(localStorage.getItem('x-auth-token'));
+            window.localStorage.setItem('x-username', $("#typeuserName").val());
             location.href = "https://localhost:44324/Messenger/MessengerLayout";
         },
         error: function (responseData, textStatus, errorThrown) {

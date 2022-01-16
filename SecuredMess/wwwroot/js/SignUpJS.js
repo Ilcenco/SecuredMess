@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     window.localStorage.removeItem('x-auth-token');
+    window.localStorage.removeItem('x-username');
 
     $("#signUpForm").validate({
         rules: {

@@ -10,6 +10,6 @@
     }
     else {
         $('#mainContainer').css('display', 'flex');
-        //$('#mainContainer').removeAttr('hidden');
+        $('.userNameText').text(localStorage.getItem('x-username'));
     }
 });
