@@ -38,6 +38,10 @@ body {
     border-top-left-radius: 9px;
     height: 80px;
 }
+    .profileContainer a {
+        margin-left: auto;
+        margin-right: 0;
+    }
 
 .profilePictureContainer {
     display: flex;

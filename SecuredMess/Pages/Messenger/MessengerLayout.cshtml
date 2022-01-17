@@ -15,41 +15,45 @@
                 <div class="userInfo">
                     <p class="userNameText"></p>
                 </div>
+
+                <a href="https://localhost:44324/SignIn/SignIn">
+                    <input id="logOutIcon" type="image" name="Log Out Button" src="/images/log-out.png" alt="Log Out">
+                </a>
             </div>
 
             <div id="addUserContainer" class="addUserContainer">
                 <input id="addUserInput" type=text alt="add user">
-                <input id="addUserButton" type="image" src="/images/add.png">
+                <input id="addUserButton" type="image" src="/images/add.png" onclick="AddCompanion()">
             </div>
 
             <div class="contactsContainer">
 
-                <div class="btn contact">
-                    <button class="activePlusInfo">
+                @*<div class="contact" style="display:none">
+                    <div class="activePlusInfo" onclick="console.log('get mess')">
                         <div class="activeContact"> </div>
                         <div class="contactsInfo">
                             <div class="contactImageContainer">
                                 <img class="contactImage" src="/images/fox%20(2).png" alt="">
                             </div>
                             <div class="contactsInfo">
-                                <p class="contactName">User Name</p>
+                                <p class="contactName"></p>
                             </div>
                         </div>
-                    </button>
+                    </div>
 
-                    <button class="deleteContactContainer">
+                    <div class="deleteContactContainer"  onclick="console.log('delete user')">
                         <input class="deleteContactIcon" type="image" name="Delete Contact Button"
                                src="/images/trash.png" alt="delete contact">
-                    </button>
-                </div>
+                    </div>
+                </div>*@
 
 
             </div>
-            <div class="logOutContainer">
+            @*<div class="logOutContainer">
                 <a href="https://localhost:44324/SignIn/SignIn">
                     <input id="logOutIcon" type="image" name="Log Out Button" src="/images/log-out.png" alt="Log Out">
                 </a>
-            </div>
+            </div>*@
         </div>
 
         <div class="chatContainer">
