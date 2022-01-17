@@ -42,7 +42,7 @@ function SignInRequest() {
             window.localStorage.setItem('x-username', $("#typeuserName").val());
             location.href = "https://localhost:44324/Messenger/MessengerLayout";
         },
-        error: function (responseData, textStatus, errorThrown) {
+        error: function (responseData) {
             $('#signInError').removeAttr('hidden');
         }
     });
