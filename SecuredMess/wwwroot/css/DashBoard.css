@@ -267,6 +267,7 @@ body {
     border-radius: 20px;
     padding: 15px;
     margin: 10px;
+    max-width: 50%;
 }
 
 .textMessageReceived {
@@ -281,5 +282,5 @@ body {
     border-radius: 20px;
     padding: 15px;
     margin: 10px;
-    width: auto;
+    max-width: 50%;
 }
