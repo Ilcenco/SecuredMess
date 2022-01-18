@@ -17,7 +17,7 @@ body {
 #mainContainer {
     display: flex;
     height: 80vh;
-    max-width: 1200px;
+    width: 70vw;
     background: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
     margin: 20px;
@@ -196,6 +196,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 10px;
+    width: 100%;
 }
 
 #messagesContainer {
@@ -220,7 +221,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: inherit;
+    width: auto;
     margin-top: auto;
     padding: 15px;
 }
