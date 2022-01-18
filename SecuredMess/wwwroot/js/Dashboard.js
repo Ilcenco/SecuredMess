@@ -95,6 +95,7 @@ function SendMessage() {
     }
     data = JSON.stringify(data);
     console.log(data);
+    $("#messageInput").val("");
 
     $.ajax({
         url: 'http://localhost:8000/message/send',
@@ -104,7 +105,7 @@ function SendMessage() {
         },
         data: data,
         success: function (responseData) {
-            console.log(responseData);
+            GetMessageList(destinationId);
         },
         error: function (responseData) {
             console.log(responseData);
