@@ -20,27 +20,28 @@
 });
 
 var authString = "Bearer " + localStorage.getItem('x-auth-token');
+var destinationId = "";
 
 function DrawCompanions(list) {
     list.forEach(name => AppendCompanion(name));
 }
 function AppendCompanion(name) {
     var id = "'" + name + "'";
-
-    var sample = '<div class="contact" id="' + name + '">' +
-        '<div class="activePlusInfo" id="' + name + '" onclick="GetMessageList('+ id +')">' +
+    var showName = name;
+    var sample = '<div class="contact" id="' + showName + '">' +
+        '<div class="activePlusInfo" id="' + showName + '" onclick="GetMessageList('+ id +')">' +
         '<div class="activeContact"> </div>' +
         '<div class="contactsInfo">' +
         '<div class="contactImageContainer">' +
         '<img class="contactImage" src="/images/fox%20(2).png" alt="">' +
         '</div>' +
         '<div class="contactsInfo">' +
-        '<p class="contactName">' + name + '</p>' +
+        '<p class="contactName">' + id + '</p>' +
         '</div>' +
         '</div>' +
         '</div>' +
 
-        '<div class="deleteContactContainer" id="' + name + '" onclick="DeleteCompanion('+ id +')">' +
+        '<div class="deleteContactContainer" id="' + showName + '" onclick="DeleteCompanion('+ id +')">' +
         '<input class="deleteContactIcon" type="image" name="Delete Contact Button"' +
         'src="/images/trash.png" alt="delete contact">' +
         '</div>' +
@@ -50,15 +51,89 @@ function AppendCompanion(name) {
    
 }
 
+//<div class="receivedMessage">
+//                    <div class="textMessageContainer">
+//                        <p class="textMessageReceived">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+//                            Necessitatibus ratione vero iure in id perspiciatis numquam est. Fugit quas laboriosam
+//                            similique reiciendis, atque, quam officiis et, id odio cum perspiciatis.</p>
+//                    </div>
+//                </div>
+//                <div class="sentMessage">
+//                    <p class="textMessageSend">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quod
+//                        repellat quae deserunt non consequuntur reiciendis enim nam doloremque corrupti? Sapiente vero
+//                        beatae tenetur laboriosam quibusdam magnam doloribus voluptatem architecto.</p>
+//                </div>
+
+
+function AppendMessages(list) {
+    list.forEach(m => DrawMessage(m));
+}
+function DrawMessage(m) {
+    var sample = "";
+    if (m.author_id == destinationId) {
+        sample =
+            '<div class="receivedMessage">' +
+            '<div class="textMessageContainer">' +
+            '<p class="textMessageReceived">' + m.content + '</p>' + 
+            '</div>' +
+            '</div>';
+    }
+    else {
+        sample =
+            '<div class="sentMessage">' + 
+            '<p class="textMessageSend">'+ m.content + '</p>'
+            '</div>';
+    }
+    $("#messagesContainer").append(sample);
+}
+
+
+function SendMessage() {
+    var data = {
+        destination_id: destinationId,
+        content: $("#messageInput").val(),
+    }
+    data = JSON.stringify(data);
+    console.log(data);
+
+    $.ajax({
+        url: 'http://localhost:8000/message/send',
+        method: 'POST',
+        headers: {
+            "Authorization": authString,
+        },
+        data: data,
+        success: function (responseData) {
+            console.log(responseData);
+        },
+        error: function (responseData) {
+            console.log(responseData);
+        }
+    });
+}
 
 function GetMessageList(name) {
-    console.log("message list " + name);
+    destinationId = name;
+    $(".sentMessage").remove();
+    $(".receivedMessage").remove();
+    $.ajax({
+        url: 'http://localhost:8000/message/' + name,
+        method: 'GET',
+        headers: {
+            "Authorization": authString,
+        },
+        success: function (responseData) {
+            AppendMessages(responseData);
+        },
+        error: function (responseData) {
+            console.log(responseData);
+        }
+    });
 
 }
 
 
 function AddCompanion() {
-
     var username = $("#addUserInput").val();
 
     $.ajax({
