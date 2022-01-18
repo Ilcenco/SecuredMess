@@ -248,13 +248,15 @@ body {
 }
 
 .receivedMessage {
-    width: 50%;
+    display: flex;
+    place-content: flex-start;
+    width: auto;
 }
 
 .sentMessage {
     display: flex;
     place-content: flex-end;
-    width: 100%;
+    width: auto;
 }
 
 .textMessageContainer {
@@ -265,6 +267,7 @@ body {
     border-radius: 20px;
     padding: 15px;
     margin: 10px;
+    max-width: 50%;
 }
 
 .textMessageReceived {
@@ -279,5 +282,5 @@ body {
     border-radius: 20px;
     padding: 15px;
     margin: 10px;
-    width: 50%;
+    max-width: 50%;
 }
